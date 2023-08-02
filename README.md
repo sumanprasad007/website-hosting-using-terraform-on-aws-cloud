@@ -51,7 +51,6 @@ Define the S3 bucket resource in the main.tf file. The bucket name should be glo
             error_document = "error.html"
         }
         }
-
         ```
 
 4. **Enable Static Website Hosting**
