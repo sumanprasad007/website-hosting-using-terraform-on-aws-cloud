@@ -6,11 +6,11 @@ This is my personal portfolio showcasing my skills as a Cloud DevOps Engineer. I
 
 ## Table of Contents
 
+- [Portfolio](https://linktr.ee/sumanprasad007)
 - [About Me](#about-me)
 - [Reviews](#reviews)
 - [Cloud Native Projects](#cloud-native-projects)
 - [Contact Me](#contact-me)
-- [Portfolio](https://linktr.ee/sumanprasad007)
 
 # Hosting a Static Website Using Terraform on AWS S3
 
