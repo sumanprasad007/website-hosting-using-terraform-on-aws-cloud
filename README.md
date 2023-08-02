@@ -53,6 +53,41 @@ Define the S3 bucket resource in the main.tf file. The bucket name should be glo
 
 ```
 
+4. **Enable Static Website Hosting**
+Add the following code to enable static website hosting for the S3 bucket:
+```
+    resource "aws_s3_bucket_policy" "website_policy" {
+    bucket = aws_s3_bucket.website_bucket.bucket
+    policy = jsonencode({
+        Version = "2012-10-17",
+        Statement = [
+        {
+            Sid = "PublicReadGetObject",
+            Effect = "Allow",
+            Principal = "*",
+            Action = ["s3:GetObject"],
+            Resource = [
+            "${aws_s3_bucket.website_bucket.arn}/*",
+            ],
+        },
+        ],
+    })
+    }
+
+```
+
+5. **Upload Website Content**
+Place your website files (e.g., HTML, CSS, JS) in a directory named website within your Terraform configuration directory. Then, use the aws_s3_bucket_object resource to upload these files to the S3 bucket:
+
+```
+resource "aws_s3_bucket_object" "website_files" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  acl    = "public-read"
+  key    = "website/"
+  source = "website/"
+}
+
+```
 ## About Me
 
 Hey there, I'm Prasad Suman Mohan, a Cloud DevOps Engineer. I am passionate about cloud computing and DevOps. As a Cloud DevOps Engineer, I have extensive experience in designing and implementing cloud solutions using a variety of DevOps tools, including Kubernetes, Docker, ArgoCD, GitLab, Jenkins, Prometheus, and Grafana. I take pride in my work and have successfully completed various projects, helping clients optimize costs, improve system performance, and ensure reliability.
