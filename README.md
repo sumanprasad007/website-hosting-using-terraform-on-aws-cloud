@@ -42,17 +42,17 @@ Before getting started, ensure you have the following prerequisites:
 
 Define the S3 bucket resource in the main.tf file. The bucket name should be globally unique. Add the following code:
 
-    ```
-    resource "aws_s3_bucket" "website_bucket" {
-    bucket = "your-unique-bucket-name" # Replace with your desired bucket name
-    acl    = "public-read"
-    website {
-        index_document = "index.html"
-        error_document = "error.html"
-    }
-    }
+        ```
+        resource "aws_s3_bucket" "website_bucket" {
+        bucket = "your-unique-bucket-name" # Replace with your desired bucket name
+        acl    = "public-read"
+        website {
+            index_document = "index.html"
+            error_document = "error.html"
+        }
+        }
 
-    ```
+        ```
 
 4. **Enable Static Website Hosting**
 Add the following code to enable static website hosting for the S3 bucket:
