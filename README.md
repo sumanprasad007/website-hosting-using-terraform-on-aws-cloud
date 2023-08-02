@@ -41,7 +41,7 @@ Before getting started, ensure you have the following prerequisites:
 3. **Create S3 Bucket**  
 
 Define the S3 bucket resource in the main.tf file. The bucket name should be globally unique. Add the following code:
-```
+    ```
     resource "aws_s3_bucket" "website_bucket" {
     bucket = "your-unique-bucket-name" # Replace with your desired bucket name
     acl    = "public-read"
@@ -51,11 +51,11 @@ Define the S3 bucket resource in the main.tf file. The bucket name should be glo
     }
     }
 
-```
+    ```
 
 4. **Enable Static Website Hosting**
 Add the following code to enable static website hosting for the S3 bucket:
-```
+    ```
     resource "aws_s3_bucket_policy" "website_policy" {
     bucket = aws_s3_bucket.website_bucket.bucket
     policy = jsonencode({
@@ -74,43 +74,43 @@ Add the following code to enable static website hosting for the S3 bucket:
     })
     }
 
-```
+    ```
 
 5. **Upload Website Content**
 Place your website files (e.g., HTML, CSS, JS) in a directory named website within your Terraform configuration directory. Then, use the aws_s3_bucket_object resource to upload these files to the S3 bucket:
 
-```
-resource "aws_s3_bucket_object" "website_files" {
-  bucket = aws_s3_bucket.website_bucket.bucket
-  acl    = "public-read"
-  key    = "website/"
-  source = "website/"
-}
+    ```
+    resource "aws_s3_bucket_object" "website_files" {
+    bucket = aws_s3_bucket.website_bucket.bucket
+    acl    = "public-read"
+    key    = "website/"
+    source = "website/"
+    }
 
-```
+    ```
 
 6. **Initialize and Apply Terraform**
 Run the following commands to initialize and apply the Terraform configuration:
 
-```
-terraform init
-terraform apply
+    ```
+    terraform init
+    terraform apply
 
-```
+    ```
 Terraform will display a plan showing the resources to be created or modified. Type yes to proceed with the changes.
 
 7. **Access Your Website**
 After the Terraform apply is complete, you can access your static website using the endpoint provided by AWS S3. The endpoint will be displayed in the Terraform output. It should look like
 
-```
- http://your-unique-bucket-name.s3-website-us-east-1.amazonaws.com.
-```
+    ```
+    http://your-unique-bucket-name.s3-website-us-east-1.amazonaws.com.
+    ```
 8. **Clean the resources**
 To clean up the resources created by Terraform, run the following command:
 
-```
-terraform destroy --auto-approve
-```
+    ```
+    terraform destroy --auto-approve
+    ```
 9. **Conclusion**
 
 Congratulations! You've successfully hosted a static website on AWS S3 using Terraform. Remember to always clean up your resources to avoid unnecessary costs.
