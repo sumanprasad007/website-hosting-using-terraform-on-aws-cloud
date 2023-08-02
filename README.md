@@ -1,6 +1,6 @@
 # Portfolio of Prasad Suman Mohan - Cloud DevOps Engineer
 
-![Portfolio Preview](https://blog.prasadsuman.me)
+![image](https://github.com/sumanprasad007/website-hosting-using-terraform-on-aws-cloud/assets/55047333/eea1205e-2f40-47dc-92da-cd77d94a3e06)
 
 This is my personal portfolio showcasing my skills as a Cloud DevOps Engineer. It includes details about my background, projects, testimonials, and contact information.
 
@@ -10,6 +10,7 @@ This is my personal portfolio showcasing my skills as a Cloud DevOps Engineer. I
 - [Reviews](#reviews)
 - [Cloud Native Projects](#cloud-native-projects)
 - [Contact Me](#contact-me)
+- [Portfolio](https://linktr.ee/sumanprasad007)
 
 # Hosting a Static Website Using Terraform on AWS S3
 
