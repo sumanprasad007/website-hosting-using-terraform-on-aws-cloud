@@ -88,6 +88,38 @@ resource "aws_s3_bucket_object" "website_files" {
 }
 
 ```
+
+6. **Initialize and Apply Terraform**
+Run the following commands to initialize and apply the Terraform configuration:
+
+```
+terraform init
+terraform apply
+
+```
+Terraform will display a plan showing the resources to be created or modified. Type yes to proceed with the changes.
+
+7. **Access Your Website**
+After the Terraform apply is complete, you can access your static website using the endpoint provided by AWS S3. The endpoint will be displayed in the Terraform output. It should look like
+
+```
+ http://your-unique-bucket-name.s3-website-us-east-1.amazonaws.com.
+```
+8. **Clean the resources**
+To clean up the resources created by Terraform, run the following command:
+
+```
+terraform destroy --auto-approve
+```
+9. **Conclusion**
+
+Congratulations! You've successfully hosted a static website on AWS S3 using Terraform. Remember to always clean up your resources to avoid unnecessary costs.
+
+For more information about Terraform and AWS S3, check out the official documentation:
+
+Terraform Documentation
+AWS S3 Developer Guide
+
 ## About Me
 
 Hey there, I'm Prasad Suman Mohan, a Cloud DevOps Engineer. I am passionate about cloud computing and DevOps. As a Cloud DevOps Engineer, I have extensive experience in designing and implementing cloud solutions using a variety of DevOps tools, including Kubernetes, Docker, ArgoCD, GitLab, Jenkins, Prometheus, and Grafana. I take pride in my work and have successfully completed various projects, helping clients optimize costs, improve system performance, and ensure reliability.
