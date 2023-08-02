@@ -41,6 +41,7 @@ Before getting started, ensure you have the following prerequisites:
 3. **Create S3 Bucket**  
 
 Define the S3 bucket resource in the main.tf file. The bucket name should be globally unique. Add the following code:
+
     ```
     resource "aws_s3_bucket" "website_bucket" {
     bucket = "your-unique-bucket-name" # Replace with your desired bucket name
