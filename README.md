@@ -1,6 +1,6 @@
 # Portfolio of Prasad Suman Mohan - Cloud DevOps Engineer
 
-![Portfolio Preview](https://your-portfolio-image-url.com)
+![Portfolio Preview](https://blog.prasadsuman.me)
 
 This is my personal portfolio showcasing my skills as a Cloud DevOps Engineer. It includes details about my background, projects, testimonials, and contact information.
 
@@ -11,6 +11,48 @@ This is my personal portfolio showcasing my skills as a Cloud DevOps Engineer. I
 - [Cloud Native Projects](#cloud-native-projects)
 - [Contact Me](#contact-me)
 
+# Hosting a Static Website Using Terraform on AWS S3
+
+This README provides a step-by-step guide on how to use Terraform to host a static website on AWS S3. We'll cover the process of creating an S3 bucket, configuring it for static website hosting, and deploying the website content.
+
+## Prerequisites
+
+Before getting started, ensure you have the following prerequisites:
+
+- An AWS account with appropriate permissions to create S3 resources.
+- Terraform installed on your local machine. If you don't have it installed, you can download it from the [Terraform website](https://www.terraform.io/downloads.html).
+
+## Steps
+
+1. **Create a Terraform Configuration File**
+
+   Create a new directory for your Terraform configuration and create a file named `main.tf` inside it. This file will contain the Terraform code to define the S3 bucket and its configuration.
+
+2. **Configure Provider**
+
+   In the `main.tf` file, define the AWS provider and region. Add the following code:
+
+   ```hcl
+   provider "aws" {
+     region = "us-east-1" # Change this to your desired AWS region
+   }
+   ```
+
+3. **Create S3 Bucket**  
+
+Define the S3 bucket resource in the main.tf file. The bucket name should be globally unique. Add the following code:
+```
+    resource "aws_s3_bucket" "website_bucket" {
+    bucket = "your-unique-bucket-name" # Replace with your desired bucket name
+    acl    = "public-read"
+    website {
+        index_document = "index.html"
+        error_document = "error.html"
+    }
+    }
+
+```
+
 ## About Me
 
 Hey there, I'm Prasad Suman Mohan, a Cloud DevOps Engineer. I am passionate about cloud computing and DevOps. As a Cloud DevOps Engineer, I have extensive experience in designing and implementing cloud solutions using a variety of DevOps tools, including Kubernetes, Docker, ArgoCD, GitLab, Jenkins, Prometheus, and Grafana. I take pride in my work and have successfully completed various projects, helping clients optimize costs, improve system performance, and ensure reliability.
@@ -20,10 +62,6 @@ Hey there, I'm Prasad Suman Mohan, a Cloud DevOps Engineer. I am passionate abou
 Check out what my clients have to say about my work:
 
 - ⭐⭐⭐⭐⭐ "Prasad's expertise in cloud computing and DevOps is unparalleled. He provided valuable insights and solutions for our project, and we couldn't be happier with the results." - John Doe, CEO at Example Corp
-- ⭐⭐⭐⭐⭐ "Working with Prasad was a great experience. His dedication and problem-solving skills made our cloud migration project a success." - Jane Smith, CTO at ABC Solutions
-- ⭐⭐⭐⭐⭐ "Prasad's knowledge of AWS and cloud infrastructure is impressive. He helped us optimize costs and improve our system's performance." - Mark Johnson, CIO at XYZ Tech
-- ⭐⭐⭐⭐⭐ "I am extremely satisfied with Prasad's work. He is a true professional with deep knowledge of cloud technologies." - Sarah Brown, Director of Engineering
-- ⭐⭐⭐⭐⭐ "Prasad's guidance on our cloud security strategy was invaluable. His attention to detail and clear communication are commendable." - Michael Williams, Security Officer at Company Z
 
 ## Cloud Native Projects
 
